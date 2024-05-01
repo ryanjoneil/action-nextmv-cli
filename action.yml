@@ -1,0 +1,19 @@
+name: 'Nextmv App Run'
+description: 'Run an app in Nextmv Cloud.'
+inputs:
+  app-id:
+    description: 'Nextmv app ID'
+    required: true
+  input-file-path:
+    description: 'Input file path'
+    required: true
+  instance-id:
+    description: 'Nextmv app instance ID'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.app-id }}
+    - ${{ inputs.input-file-path }}
+    - ${{ inputs.instance-id }}

@@ -4,6 +4,8 @@ APP_ID=$1
 INPUT_FILE_PATH=$2
 INSTANCE_ID=$3
 
+echo "API KEY=$NEXTMV_API_KEY" >> $GITHUB_OUTPUT
+
 curl -sS "https://cloud.nextmv.io/install-cli.txt" | bash -
 nextmv configure -a $NEXTMV_API_KEY
 

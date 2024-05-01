@@ -10,3 +10,4 @@ RUN apt-get update
 RUN apt-get install -y curl
 
 COPY entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
